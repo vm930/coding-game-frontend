@@ -4,7 +4,7 @@ const bodyTag = document.querySelector('body');
 const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
 let questionsJson;
-let currentIndex = 6;
+let currentIndex = 0;
 
 //fetch data
 function fetchQuestion(currentIndex) {
@@ -15,17 +15,18 @@ function fetchQuestion(currentIndex) {
     answers.map(displayOptions).join(' ')
 	});
 }
-
 fetchQuestion(currentIndex);
 
 function displayQuestion(question) {
 	questionDiv.innerHTML = `
-        <h1>${question.content}</h1></br>
-        <div id = "answerOptionBlock">
-        <ul>
-        </ul>
-        </div>
-        `;
+                          <h1></h1></br>
+                          <div id = "answerOptionBlock">
+                          <ul>
+                          </ul>
+                          </div>
+                          `;
+  const h1 = document.querySelector('h1')
+  h1.innerText = `${question.content}`
 }
 
 function displayOptions(answer){
