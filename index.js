@@ -11,8 +11,8 @@ function fetchQuestion(currentIndex) {
 	fetch(urlQuestions).then((resp) => resp.json()).then(function(json) {
 		questionsJson = json;
 		displayQuestion(questionsJson[currentIndex]);
-    let answers = questionsJson[currentIndex].answers
-    answers.map(displayOptions).join(' ')
+		let answers = questionsJson[currentIndex].answers;
+		answers.map(displayOptions).join(' ');
 	});
 }
 
@@ -28,14 +28,13 @@ function displayQuestion(question) {
         `;
 }
 
-function displayOptions(answer){
-  let ul = document.querySelector("ul");
-  let li = document.createElement("li");
-      li.dataset.iscorrect =`${answer.is_correct}`
-   li.appendChild(document.createTextNode(`${answer.answer_content}`));
-   ul.appendChild(li)
+function displayOptions(answer) {
+	let ul = document.querySelector('ul');
+	let li = document.createElement('li');
+	li.dataset.iscorrect = `${answer.is_correct}`;
+	li.appendChild(document.createTextNode(`${answer.answer_content}`));
+	ul.appendChild(li);
 }
-
 
 //add event listener
 bodyTag.addEventListener('click', function(e) {
@@ -43,12 +42,12 @@ bodyTag.addEventListener('click', function(e) {
 		//go to the next question
 		alert('SMORT!');
 		//update currentIndex
-		currentIndex ++;
-    // console.log(currentIndex);
+		currentIndex++;
+		// console.log(currentIndex);
 		fetchQuestion(currentIndex);
-    if(currentIndex == questionsJson.length && e.target.dataset.iscorrect === 'true'){
-      alert('congratulations🏆')
-    };
+		if (currentIndex == questionsJson.length && e.target.dataset.iscorrect === 'true') {
+			alert('congratulations🏆');
+		}
 	} else {
 		alert('try again!');
 	}
