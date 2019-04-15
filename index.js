@@ -4,13 +4,15 @@ const bodyTag = document.querySelector('body');
 const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
 let questionsJson;
-let currentIndex = 10;
+let currentIndex = 6;
 
 //fetch data
 function fetchQuestion(currentIndex) {
 	fetch(urlQuestions).then((resp) => resp.json()).then(function(json) {
 		questionsJson = json;
 		displayQuestion(questionsJson[currentIndex]);
+    let answers = questionsJson[currentIndex].answers
+    answers.map(displayOptions).join(' ')
 	});
 }
 
@@ -21,15 +23,19 @@ function displayQuestion(question) {
         <h1>${question.content}</h1></br>
         <div id = "answerOptionBlock">
         <ul>
-        ${question.answers
-			.map(function(answer) {
-				return `<li data-iscorrect= "${answer.is_correct}">${answer.answer_content}</li>`;
-			})
-			.join('')}
         </ul>
         </div>
         `;
 }
+
+function displayOptions(answer){
+  let ul = document.querySelector("ul");
+  let li = document.createElement("li");
+      li.dataset.iscorrect =`${answer.is_correct}`
+   li.appendChild(document.createTextNode(`${answer.answer_content}`));
+   ul.appendChild(li)
+}
+
 
 //add event listener
 bodyTag.addEventListener('click', function(e) {
