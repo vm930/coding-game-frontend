@@ -4,12 +4,17 @@ const bodyTag = document.querySelector('body');
 const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
 let questionsJson;
+let currentIndex = 2;
 
 //fetch data
-fetch(urlQuestions).then((resp) => resp.json()).then(function(json) {
-	questionsJson = json;
-	displayQuestion(questionsJson[3]);
-});
+function fetchQuestion(currentIndex) {
+	fetch(urlQuestions).then((resp) => resp.json()).then(function(json) {
+		questionsJson = json;
+		displayQuestion(questionsJson[currentIndex]);
+	});
+}
+
+fetchQuestion(currentIndex);
 
 function displayQuestion(question) {
 	questionDiv.innerHTML = `
@@ -31,6 +36,9 @@ bodyTag.addEventListener('click', function(e) {
 	if (e.target.dataset.iscorrect === 'true') {
 		//go to the next question
 		alert('SMORT!');
+		//update currentIndex
+		currentIndex++;
+		fetchQuestion(currentIndex);
 	} else {
 		alert('try again!');
 	}
