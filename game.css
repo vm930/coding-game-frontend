@@ -1,3 +1,43 @@
-/* body {
-	background-image: url("https://media.giphy.com/media/qK0tMcGZm21by/giphy.gif");
-} */
+body {
+	background-color: #fafafa;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-align: left;
+}
+
+footer {
+	background-color: rgb(224, 112, 75);
+}
+
+.nav-wrapper {
+	background: rgb(224, 112, 75);
+}
+
+.brand-logo {
+	width: 80px;
+	height: auto;
+}
+
+#resizeCard {
+	width: 800px;
+	height: auto;
+	padding: 50px;
+}
+
+section {
+	padding-top: 8em;
+	padding-bottom: 5em;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+nav .nav-wrapper {
+	position: relative;
+	height: 150%;
+}
