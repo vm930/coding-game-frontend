@@ -50,7 +50,7 @@ function displayOptions(answer) {
 }
 
 //add event listener
-bodyTag.addEventListener('click', function(e) {
+questionDiv.addEventListener('click', function(e) {
 	if (e.target.dataset.iscorrect === 'true') {
 		//go to the next question
 		alert('SMORT!');
