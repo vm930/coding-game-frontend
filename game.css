@@ -9,10 +9,6 @@ body {
 	text-align: left;
 }
 
-footer {
-	background-color: rgb(224, 112, 75);
-}
-
 .nav-wrapper {
 	background: rgb(224, 112, 75);
 }
@@ -82,4 +78,30 @@ nav .nav-wrapper {
 	/* margin-top: 3em; */
 	/* padding-top: 3em;
 	padding-bottom: 3em; */
+}
+
+#footerSection {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 13px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	margin-bottom: 20%;
+}
+
+h4 {
+	font-size: 20px;
+	margin: 0 0 8px;
+}
+
+span {
+	font-size: 13px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+footer {
+	background-color: rgb(224, 112, 75);
+	padding: 10% 5%;
+	margin-top: 0%;
+	padding-bottom: 20%;
 }
