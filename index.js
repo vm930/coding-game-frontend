@@ -25,8 +25,8 @@ function displayQuestion(question) {
                           </ul>
                           </div>
                           `;
-  const h1 = document.querySelector('h1')
-  h1.innerText = `${question.content}`
+	const h1 = document.querySelector('h1');
+	h1.innerText = `${question.content}`;
 }
 
 function displayOptions(answer) {
