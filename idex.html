@@ -6,30 +6,33 @@
     <title></title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="game.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet">
+    <!-- js file -->
+    <script src="index.js" defer></script>
   </head>
 
 <!-- nav bar -->
-
+<div class="navbar-fixed" id="resizeNav">
 <nav>
-  <div class="nav-wrapper yellow darken-4">
-    <a href="#" class="brand-logo center">CHICKEN GAME</a>
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
-      <li>Sass</a></li>
+  <div class="nav-wrapper" >
+    <img src="./src/logo.png"class="brand-logo" class="resize">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <button class="waves-effect waves-light btn-small orange accent-2" id="start">Let's Start!</button>
     </ul>
   </div>
 </nav>
+</div>
 
-<!-- question section -->
+<!--  game section -->
+<section id="game">
   <body>
-
     <div class="row">
-      <div class="col s12 m6">
-        <div class="card yellow lighten-4">
-          <div class="card-content yellow lighten-4">
+      <div class="container">
+        <div class="card deep-orange lighten-1 white-text" id="resizeCard">
+          <div class="card-content deep-orange lighten-1">
             <div id="questionBlock">
             </div>
           </div>
@@ -38,22 +41,37 @@
       </div>
     </div>
 
+</body>
+</section>>
+<!-- cute gif -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-  <div id="answerOptionBlock">
- </div>
-    <script src = "index.js" ></script>
-
-  </body>
+<!-- footer section -->
+<footer >
+<div class="container white-text">
+  <div class="row white-text">
+    <div class="col-sm-2 mb-5 white-text">
+      <h4>GrowYourChick</h4>
+      <div><a href="https://codepip.com/about/" class= "white-text" >About Us</a></div>
+      <div><a href="https://codepip.com/blog/" class= "white-text" >Blog</a></div>
+    </div>
+    <div class="col-sm-3 white-text">
+      <h4>Support</h4>
+      <div><a href="https://codepip.com/contact/" class= "white-text" >Contact Us</a></div>
+      <div><a href="https://codepip.com/privacy/" class= "white-text" >Privacy Policy</a></div>
+      <div><a href="https://codepip.com/terms/" class= "white-text" >Terms of Service</a></div>
+    </div>
+    <div class="col-sm-1 white-text">
+      <h4>ConnectWithCreators</h4>
+      <div><a target="_blank" class= "white-text" href="https://www.instagram.com/vickysdailystandup/">VickyInstagram</a></div>
+      <div><a target="_blank" class= "white-text"  href="">KimInstagram</a></div>
+    </div>
+  </div>
+  <div class="row white-text">
+    <div class="col-sm-8 mb-5 white-text">
+      <div><span>Copyright © 2019 GrowYourChick. All rights reserved.</span></div>
+    </div>
+  </div>
+</div>
+</footer>
+  
 </html>
