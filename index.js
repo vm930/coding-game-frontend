@@ -51,17 +51,20 @@ function displayOptions(answer) {
 
 //add event listener
 questionDiv.addEventListener('click', function(e) {
-	if (e.target.dataset.iscorrect === 'true') {
+	// console.log();
+	if (e.target.parentNode.dataset.iscorrect === 'true') {
 		//go to the next question
 		alert('SMORT!');
 		//update currentIndex
 		currentIndex++;
 		// console.log(currentIndex);
 		fetchQuestion(currentIndex);
-		if (currentIndex == questionsJson.length && e.target.dataset.iscorrect === 'true') {
+		if (currentIndex == questionsJson.length && e.target.parentNode.dataset.iscorrect === 'true') {
 			alert('congratulations🏆');
 		}
-	} else {
+	} else if (e.target.parentNode.dataset.iscorrect === 'false') {
 		alert('try again!');
+	} else {
+		alert('oops!wrong places!');
 	}
 }); //end of eventlistening
