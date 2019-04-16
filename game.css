@@ -18,7 +18,7 @@ footer {
 }
 
 .brand-logo {
-	width: 80px;
+	width: 85px;
 	height: auto;
 }
 
@@ -35,9 +35,19 @@ section {
 
 body {
 	font-family: 'Ubuntu', sans-serif;
+	font-size: 150%;
+}
+
+h1 {
+	font-size: 40px;
 }
 
 nav .nav-wrapper {
 	position: relative;
 	height: 150%;
+}
+
+.answers {
+	display: flex;
+	justify-content: space-between;
 }
