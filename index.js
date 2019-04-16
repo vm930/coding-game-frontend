@@ -30,30 +30,41 @@ function displayQuestion(question) {
 }
 
 function displayOptions(answer) {
-	let ul = document.querySelector('.answers');
-	let li = document.createElement('li');
-	let newImgtag = document.createElement('img');
-	newImgtag.src = './src/egg-md.png';
-	newImgtag.appendChild(li);
-	newImgtag.dataset.id = `${answer.id}`;
-	li.dataset.iscorrect = `${answer.is_correct}`;
-	li.appendChild(document.createTextNode(`${answer.answer_content}`));
-	ul.appendChild(li);
+	const ul = document.querySelector('.answers');
+	const newDivtag = document.createElement('div');
+	const newImgTag = document.createElement('img');
+	newDivtag.className = 'answerEgg';
+	newDivtag.dataset.id = `${answer.answer_id}`;
+	newDivtag.dataset.iscorrect = `${answer.is_correct}`;
+	newDivtag.innerText = `${answer.answer_content}`;
+	newImgTag.setAttribute(
+		'src',
+		'https://png2.kisspng.com/sh/e20c2baf85e4ddab37453a91cb65fc9d/L0KzQYm3U8I5N6doiZH0aYP2gLBuTfVob15uhtU2a3H1cbW0gBhqa5xqhp9uZ3ewh7nwlPUubZhsi58AYXLlc7O5VvVlPJU9UJC8MEO7RIW8WcE2OmM3TagBN0i8R4O1kP5o/kisspng-egg-inc-karad-chicken-egg-white-eggs-5abbcb26ed4d88.303844591522256678972.png'
+	);
+	newImgTag.className = 'action';
+	newImgTag.setAttribute('width', '200');
+	newImgTag.setAttribute('height', '200');
+	newDivtag.appendChild(newImgTag);
+	// newDiv.appendChild(document.createTextNode(`${answer.answer_content}`));
+	ul.appendChild(newDivtag);
 }
 
 //add event listener
-bodyTag.addEventListener('click', function(e) {
-	if (e.target.dataset.iscorrect === 'true') {
+questionDiv.addEventListener('click', function(e) {
+	// console.log();
+	if (e.target.parentNode.dataset.iscorrect === 'true') {
 		//go to the next question
 		alert('SMORT!');
 		//update currentIndex
 		currentIndex++;
 		// console.log(currentIndex);
 		fetchQuestion(currentIndex);
-		if (currentIndex == questionsJson.length && e.target.dataset.iscorrect === 'true') {
+		if (currentIndex == questionsJson.length && e.target.parentNode.dataset.iscorrect === 'true') {
 			alert('congratulations🏆');
 		}
-	} else {
+	} else if (e.target.parentNode.dataset.iscorrect === 'false') {
 		alert('try again!');
+	} else {
+		alert('oops!wrong places!');
 	}
 }); //end of eventlistening
