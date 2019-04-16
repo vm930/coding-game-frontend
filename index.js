@@ -5,6 +5,7 @@ const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
 let questionsJson;
 let currentIndex = 6;
+let level = 0;
 
 //fetch data
 function fetchQuestion(currentIndex) {
@@ -30,39 +31,77 @@ function displayQuestion(question) {
 }
 
 function displayOptions(answer) {
-	const ul = document.querySelector('.answers');
-	const newDivtag = document.createElement('div');
-	const newImgTag = document.createElement('img');
-	newDivtag.className = 'answerEgg';
-	newDivtag.dataset.id = `${answer.answer_id}`;
-	newDivtag.dataset.iscorrect = `${answer.is_correct}`;
-	newDivtag.innerText = `${answer.answer_content}`;
-	newImgTag.setAttribute(
-		'src',
-		'https://png2.kisspng.com/sh/e20c2baf85e4ddab37453a91cb65fc9d/L0KzQYm3U8I5N6doiZH0aYP2gLBuTfVob15uhtU2a3H1cbW0gBhqa5xqhp9uZ3ewh7nwlPUubZhsi58AYXLlc7O5VvVlPJU9UJC8MEO7RIW8WcE2OmM3TagBN0i8R4O1kP5o/kisspng-egg-inc-karad-chicken-egg-white-eggs-5abbcb26ed4d88.303844591522256678972.png'
-	);
-	newImgTag.className = 'action';
-	newImgTag.setAttribute('width', '200');
-	newImgTag.setAttribute('height', '200');
-	newDivtag.appendChild(newImgTag);
-	// newDiv.appendChild(document.createTextNode(`${answer.answer_content}`));
-	ul.appendChild(newDivtag);
+	if (level === 0) {
+		const ul = document.querySelector('.answers');
+		const newDivtag = document.createElement('div');
+		const newImgTag = document.createElement('img');
+		newDivtag.className = 'answerEgg';
+		newDivtag.dataset.id = `${answer.answer_id}`;
+		newDivtag.dataset.iscorrect = `${answer.is_correct}`;
+		newDivtag.innerText = `${answer.answer_content}`;
+		newImgTag.setAttribute(
+			'src',
+			'https://png2.kisspng.com/sh/e20c2baf85e4ddab37453a91cb65fc9d/L0KzQYm3U8I5N6doiZH0aYP2gLBuTfVob15uhtU2a3H1cbW0gBhqa5xqhp9uZ3ewh7nwlPUubZhsi58AYXLlc7O5VvVlPJU9UJC8MEO7RIW8WcE2OmM3TagBN0i8R4O1kP5o/kisspng-egg-inc-karad-chicken-egg-white-eggs-5abbcb26ed4d88.303844591522256678972.png'
+		);
+		newImgTag.className = 'action';
+		newImgTag.setAttribute('width', '200');
+		newImgTag.setAttribute('height', '200');
+		newDivtag.appendChild(newImgTag);
+		// newDiv.appendChild(document.createTextNode(`${answer.answer_content}`));
+		ul.appendChild(newDivtag);
+	}
+	if (level === 1) {
+		const ul = document.querySelector('.answers');
+		const newDivtag = document.createElement('div');
+		const newImgTag = document.createElement('img');
+		newDivtag.className = 'answerEgg';
+		newDivtag.dataset.id = `${answer.answer_id}`;
+		newDivtag.dataset.iscorrect = `${answer.is_correct}`;
+		newDivtag.innerText = `${answer.answer_content}`;
+		newImgTag.setAttribute(
+			'src',
+			// 'https://png2.kisspng.com/sh/e20c2baf85e4ddab37453a91cb65fc9d/L0KzQYm3U8I5N6doiZH0aYP2gLBuTfVob15uhtU2a3H1cbW0gBhqa5xqhp9uZ3ewh7nwlPUubZhsi58AYXLlc7O5VvVlPJU9UJC8MEO7RIW8WcE2OmM3TagBN0i8R4O1kP5o/kisspng-egg-inc-karad-chicken-egg-white-eggs-5abbcb26ed4d88.303844591522256678972.png'
+			//
+			'./asset/kisspng-chicken-egg-chicken-egg-clip-art-bigfoot-chick-broken-egg-out-of-egg.png'
+			// 'https://mpng.pngfly.com/20180226/rze/kisspng-chicken-egg-eggshell-cute-cartoon-chick-egg-shell-eggs-broken-shell-5a93deced29fe2.3493549015196402708627.jpg'
+		);
+		newImgTag.className = 'action';
+		newImgTag.setAttribute('width', '200');
+		newImgTag.setAttribute('height', '200');
+		newDivtag.appendChild(newImgTag);
+		// newDiv.appendChild(document.createTextNode(`${answer.answer_content}`));
+		ul.appendChild(newDivtag);
+	}
 }
+
+// function revoluteChicken() {
+// 	const que = document.querySelector('.answerEgg');
+// 	que.src =
+// 		'https://banner2.kisspng.com/20180224/dwq/kisspng-chicken-egg-chicken-egg-clip-art-bigfoot-chick-broken-egg-out-of-egg-5a91052f6bd956.9205172115194534874418.jpg';
+// }
 
 //add event listener
 questionDiv.addEventListener('click', function(e) {
-	// console.log();
-	if (e.target.parentNode.dataset.iscorrect === 'true') {
+	const eggImgTag = e.target;
+	if (eggImgTag.parentNode.dataset.iscorrect === 'true') {
 		//go to the next question
 		alert('SMORT!');
+		//put out the imagine
+		// eggImgTag.src =
+		// 	'https://banner2.kisspng.com/20180224/dwq/kisspng-chicken-egg-chicken-egg-clip-art-bigfoot-chick-broken-egg-out-of-egg-5a91052f6bd956.9205172115194534874418.jpg';
+		// console.log(eggImgTag.src);
 		//update currentIndex
 		currentIndex++;
+		level++;
 		// console.log(currentIndex);
 		fetchQuestion(currentIndex);
-		if (currentIndex == questionsJson.length && e.target.parentNode.dataset.iscorrect === 'true') {
+
+		//check to see if all the questions are answered
+		if (currentIndex == questionsJson.length && eggImgTag.parentNode.dataset.iscorrect === 'true') {
 			alert('congratulations🏆');
+			//put out the final chicken animation
 		}
-	} else if (e.target.parentNode.dataset.iscorrect === 'false') {
+	} else if (eggImgTag.parentNode.dataset.iscorrect === 'false') {
 		alert('try again!');
 	} else {
 		alert('oops!wrong places!');
