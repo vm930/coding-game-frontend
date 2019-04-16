@@ -32,6 +32,10 @@ function displayQuestion(question) {
 function displayOptions(answer) {
 	let ul = document.querySelector('.answers');
 	let li = document.createElement('li');
+	let newImgtag = document.createElement('img');
+	newImgtag.src = './src/egg-md.png';
+	newImgtag.appendChild(li);
+	newImgtag.dataset.id = `${answer.id}`;
 	li.dataset.iscorrect = `${answer.is_correct}`;
 	li.appendChild(document.createTextNode(`${answer.answer_content}`));
 	ul.appendChild(li);
