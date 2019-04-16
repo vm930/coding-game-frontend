@@ -3,6 +3,7 @@ const urlQuestions = `${urlBase}/questions`;
 const bodyTag = document.querySelector('body');
 const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
+const startButton = document.querySelector('#start');
 let questionsJson;
 let currentIndex = 6;
 let level = 0;
