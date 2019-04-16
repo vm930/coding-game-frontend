@@ -56,16 +56,26 @@ nav .nav-wrapper {
 	display: flex;
 	justify-content: space-between;
 } */
+
 .action {
 	margin-top: 3em;
-	/* padding-top: 3em;
-	padding-bottom: 3em; */
-	/* transform: translate3d(0, 0, 0) rotate(0deg);
 	transform-origin: center 60% !important;
 	animation-name: wobble;
-	animation-duration: 10s;
+	animation-duration: 3s;
 	animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-	animation-iteration-count: infinite; */
+	animation-iteration-count: infinite;
+}
+
+@keyframes wobble {
+	0% {
+		transform: translate3d(0, 0, 0) rotate(-10deg);
+	}
+	50% {
+		transform: translate3d(0, 0, 0) rotate(10deg);
+	}
+	100% {
+		transform: translate3d(0, 0, 0) rotate(-10deg);
+	}
 }
 
 .answerEgg {
