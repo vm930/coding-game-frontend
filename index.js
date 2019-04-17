@@ -16,6 +16,9 @@ startButton.addEventListener('click', function(e) {
 		document.querySelector('p').remove();
 		fetchQuestion(currentIndex);
 		e.target.style.visibility = 'hidden';
+		// const newCtag = document.createElement('canvas');
+		// newCtag.id = 'c';
+		// bodyTag.appendChild(newCtag);
 	}
 });
 
