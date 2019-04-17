@@ -4,9 +4,32 @@ const bodyTag = document.querySelector('body');
 const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
 const startButton = document.querySelector('#start');
+const initCardTag = document.querySelector('#resizeCard');
 let questionsJson;
 let currentIndex = 6;
 let level = 0;
+
+startGame();
+
+startButton.addEventListener('click', function(e) {
+	if (e.target.id === 'start') {
+		document.querySelector('p').remove();
+		fetchQuestion(currentIndex);
+		e.target.style.visibility = 'hidden';
+	}
+});
+
+function startGame() {
+	const newPtag = document.createElement('p');
+	const newImg = document.createElement('img');
+
+	newPtag.innerHTML = `<span id="startsentence">Help eggs hatch to chicken by learning HTML and  CSS basics! </span><br>
+		In this game, you must answer correctly of all the questions to help them growing into grown chickens! <br>
+		Learn to code by playing games.`;
+	newImg.setAttribute('src', 'https://media.giphy.com/media/xTiTnsPhNtZETMmN1e/giphy.gif');
+	newPtag.appendChild(newImg);
+	initCardTag.appendChild(newPtag);
+}
 
 //fetch data
 function fetchQuestion(currentIndex) {
@@ -17,7 +40,6 @@ function fetchQuestion(currentIndex) {
 		answers.map(displayOptions).join(' ');
 	});
 }
-fetchQuestion(currentIndex);
 
 function displayQuestion(question) {
 	questionDiv.innerHTML = `
