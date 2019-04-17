@@ -123,3 +123,11 @@ p {
 	margin-inline-start: 0px;
 	margin-inline-end: 0px;
 }
+
+canvas {
+	display: block;
+	width: 80vw;
+	height: 80vh;
+	opacity: 0.5;
+	z-index: -1;
+}

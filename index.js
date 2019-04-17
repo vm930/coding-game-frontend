@@ -5,6 +5,8 @@ const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
 const startButton = document.querySelector('#start');
 const initCardTag = document.querySelector('#resizeCard');
+const canvaTag = document.querySelector('#c');
+
 let questionsJson;
 let currentIndex = 6;
 let level = 0;
