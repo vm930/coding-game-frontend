@@ -105,3 +105,21 @@ footer {
 	margin-top: 0%;
 	padding-bottom: 20%;
 }
+
+p {
+	font-size: 13px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	width: 800px;
+	height: auto;
+	padding: 50px;
+	display: block;
+}
+
+#startsentence {
+	font-size: 25px;
+	font-family: 'Ubuntu', sans-serif;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
