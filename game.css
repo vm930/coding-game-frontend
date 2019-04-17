@@ -57,7 +57,7 @@ nav .nav-wrapper {
 	margin-top: 3em;
 	transform-origin: center 60% !important;
 	animation-name: wobble;
-	animation-duration: 3s;
+	animation-duration: 4s;
 	animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 	animation-iteration-count: infinite;
 }
@@ -123,11 +123,11 @@ p {
 	margin-inline-start: 0px;
 	margin-inline-end: 0px;
 }
-
-canvas {
+/* 
+#c {
 	display: block;
 	width: 80vw;
 	height: 80vh;
 	opacity: 0.5;
 	z-index: -1;
-}
+} */
