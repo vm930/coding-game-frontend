@@ -5,6 +5,8 @@ const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
 const startButton = document.querySelector('#start');
 const initCardTag = document.querySelector('#resizeCard');
+const canvaTag = document.querySelector('#c');
+
 let questionsJson;
 let currentIndex = 6;
 let level = 0;
@@ -16,9 +18,6 @@ startButton.addEventListener('click', function(e) {
 		document.querySelector('p').remove();
 		fetchQuestion(currentIndex);
 		e.target.style.visibility = 'hidden';
-		// const newCtag = document.createElement('canvas');
-		// newCtag.id = 'c';
-		// bodyTag.appendChild(newCtag);
 	}
 });
 
