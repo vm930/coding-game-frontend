@@ -54,10 +54,9 @@ nav .nav-wrapper {
 } */
 
 .action {
-	margin-top: 3em;
 	transform-origin: center 60% !important;
 	animation-name: wobble;
-	animation-duration: 3s;
+	animation-duration: 1s;
 	animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 	animation-iteration-count: infinite;
 }
@@ -124,10 +123,41 @@ p {
 	margin-inline-end: 0px;
 }
 
-canvas {
+/* .c {
 	display: block;
 	width: 80vw;
 	height: 80vh;
 	opacity: 0.5;
 	z-index: -1;
+} */
+
+@keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+
+.shake-action {
+	animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+img {
+	margin-top: 3em;
 }
