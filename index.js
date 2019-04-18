@@ -25,7 +25,8 @@ function startGame() {
 	const newImg = document.createElement('img');
 
 	newPtag.innerHTML = `<span id="startsentence">Help eggs hatch to chicken by learning HTML and  CSS basics! </span><br>
-		In this game, you must answer correctly of all the questions to help them growing into grown chickens! <br>
+		In this game, you must answer correctly of all the questions<br>
+		to help them growing into grown chickens!<br>
 		Learn to code by playing games.
 		
 		<button class="waves-effect waves-light btn-large btn-floating scale-transition pulse light-blue accent-3"
@@ -170,21 +171,15 @@ questionDiv.addEventListener('click', function(e) {
 	if (eggImgTag.parentNode.dataset.iscorrect === 'true') {
 		//go to the next question
 		alert('SMORT!');
-		//put out the imagine
-		// eggImgTag.src =
-		// 	'https://banner2.kisspng.com/20180224/dwq/kisspng-chicken-egg-chicken-egg-clip-art-bigfoot-chick-broken-egg-out-of-egg-5a91052f6bd956.9205172115194534874418.jpg';
-		// console.log(eggImgTag.src);
-		//update currentIndex
 		currentIndex++;
 		level++;
-		console.log(currentIndex);
-		console.log(level);
 		fetchQuestion(currentIndex);
 
 		//check to see if all the questions are answered
 		if (currentIndex == 6 && eggImgTag.parentNode.dataset.iscorrect === 'true') {
 			alert('congratulations🏆');
 			//put out the final chicken animation
+			displayChickens();
 			//https://media.giphy.com/media/l41lMU9vPdqjrA4QE/giphy.gif
 		}
 	} else if (eggImgTag.parentNode.dataset.iscorrect === 'false') {
@@ -193,6 +188,35 @@ questionDiv.addEventListener('click', function(e) {
 		alert('oops!wrong places!');
 	}
 }); //end of eventlistening
+
+function displayChickens() {
+	//clear the container
+	document.querySelector('#resizeCard').remove();
+	const newDiv = document.createElement('div');
+	newDiv.id = 'chicken-container';
+	bodyTag.appendChild(newDiv);
+
+	const newScriptTag1 = document.createElement('script');
+	const newScriptTag2 = document.createElement('script');
+	const newScriptTag3 = document.createElement('script');
+
+	newScriptTag1.src = 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js';
+	newScriptTag2.src = 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.min.js';
+	newScriptTag3.src = 'test2.js';
+
+	bodyTag.appendChild(newScriptTag1);
+	bodyTag.appendChild(newScriptTag2);
+	bodyTag.appendChild(newScriptTag3);
+
+	// document.querySelector('#resizeCard').innerHTML = `
+	//      <div class="card-content deep-orange lighten-1">
+	//             <div id="questionBlock">
+	//                   <div id="answerOptionBlock"></div>
+	//                   <div id="chicken-container"></div>
+	//             </div>
+	//     </div>
+	// `;
+}
 
 // .addEventListener("mouseover", (e) => {
 // 	e.preventDefault();
@@ -207,3 +231,8 @@ questionDiv.addEventListener('click', function(e) {
 // 		// console.log(e.target);
 // 	}
 // });
+
+// <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+// 	<script src='https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.min.js'></script>
+
+// 	<script src="test2.js"></script>
