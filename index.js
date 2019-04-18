@@ -3,21 +3,20 @@ const urlQuestions = `${urlBase}/questions`;
 const bodyTag = document.querySelector('body');
 const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
-const startButton = document.querySelector('#start');
 const initCardTag = document.querySelector('#resizeCard');
 // const canvaTag = document.querySelector('#c');
 
 let questionsJson;
-let currentIndex = 6;
+let currentIndex = 0;
 let level = 0;
 
 startGame();
 
-startButton.addEventListener('click', function(e) {
+initCardTag.addEventListener('click', function(e) {
 	if (e.target.id === 'start') {
 		document.querySelector('p').remove();
-		fetchQuestion(currentIndex);
 		e.target.style.visibility = 'hidden';
+		fetchQuestion(currentIndex);
 	}
 });
 
@@ -27,7 +26,11 @@ function startGame() {
 
 	newPtag.innerHTML = `<span id="startsentence">Help eggs hatch to chicken by learning HTML and  CSS basics! </span><br>
 		In this game, you must answer correctly of all the questions to help them growing into grown chickens! <br>
-		Learn to code by playing games.`;
+		Learn to code by playing games.
+		
+		<button class="waves-effect waves-light btn-large btn-floating scale-transition pulse light-blue accent-3"
+		style="font-weight: bold; font-size: 1px font-family:Ubuntu, sans-serif" id="start">Start!</button>	
+		`;
 	newImg.setAttribute('src', 'https://media.giphy.com/media/xTiTnsPhNtZETMmN1e/giphy.gif');
 	newPtag.appendChild(newImg);
 	initCardTag.appendChild(newPtag);
@@ -120,7 +123,7 @@ function displayOptions(answer) {
 		newDivtag.dataset.id = `${answer.answer_id}`;
 		newDivtag.dataset.iscorrect = `${answer.is_correct}`;
 		newDivtag.innerText = `${answer.answer_content}`;
-		newImgTag.setAttribute('src', './asset/chic3.png');
+		newImgTag.setAttribute('src', './asset/chick5.png');
 		newImgTag.className = 'action';
 		newImgTag.setAttribute('width', '200');
 		newImgTag.setAttribute('height', '200');
@@ -129,6 +132,22 @@ function displayOptions(answer) {
 	}
 
 	if (level === 4) {
+		const ul = document.querySelector('.answers');
+		const newDivtag = document.createElement('div');
+		const newImgTag = document.createElement('img');
+		newDivtag.className = 'answerEgg';
+		newDivtag.dataset.id = `${answer.answer_id}`;
+		newDivtag.dataset.iscorrect = `${answer.is_correct}`;
+		newDivtag.innerText = `${answer.answer_content}`;
+		newImgTag.setAttribute('src', './asset/chic3.png');
+		newImgTag.className = 'shake-rotate';
+		newImgTag.setAttribute('width', '200');
+		newImgTag.setAttribute('height', '200');
+		newDivtag.appendChild(newImgTag);
+		ul.appendChild(newDivtag);
+	}
+
+	if (level === 5) {
 		const ul = document.querySelector('.answers');
 		const newDivtag = document.createElement('div');
 		const newImgTag = document.createElement('img');
@@ -163,7 +182,7 @@ questionDiv.addEventListener('click', function(e) {
 		fetchQuestion(currentIndex);
 
 		//check to see if all the questions are answered
-		if (currentIndex == questionsJson.length && eggImgTag.parentNode.dataset.iscorrect === 'true') {
+		if (currentIndex == 6 && eggImgTag.parentNode.dataset.iscorrect === 'true') {
 			alert('congratulations🏆');
 			//put out the final chicken animation
 			//https://media.giphy.com/media/l41lMU9vPdqjrA4QE/giphy.gif
