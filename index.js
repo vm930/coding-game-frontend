@@ -7,8 +7,8 @@ const initCardTag = document.querySelector('#resizeCard');
 // const canvaTag = document.querySelector('#c');
 
 let questionsJson;
-let currentIndex = 0;
-let level = 0;
+let currentIndex = 5;
+let level = 5;
 
 startGame();
 
@@ -191,15 +191,11 @@ questionDiv.addEventListener('click', function(e) {
 
 function displayChickens() {
 	//clear the container
-	document.querySelector('#resizeCard').remove();
-	const newDiv = document.createElement('div');
-	newDiv.id = 'chicken-container';
-	bodyTag.appendChild(newDiv);
+	document.querySelector('#resizeCard').innerHTML = `<div id="chicken-container"></div>`;
 
 	const newScriptTag1 = document.createElement('script');
 	const newScriptTag2 = document.createElement('script');
 	const newScriptTag3 = document.createElement('script');
-
 	newScriptTag1.src = 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js';
 	newScriptTag2.src = 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.min.js';
 	newScriptTag3.src = 'test2.js';
@@ -207,15 +203,6 @@ function displayChickens() {
 	bodyTag.appendChild(newScriptTag1);
 	bodyTag.appendChild(newScriptTag2);
 	bodyTag.appendChild(newScriptTag3);
-
-	// document.querySelector('#resizeCard').innerHTML = `
-	//      <div class="card-content deep-orange lighten-1">
-	//             <div id="questionBlock">
-	//                   <div id="answerOptionBlock"></div>
-	//                   <div id="chicken-container"></div>
-	//             </div>
-	//     </div>
-	// `;
 }
 
 // .addEventListener("mouseover", (e) => {
@@ -236,3 +223,23 @@ function displayChickens() {
 // 	<script src='https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.min.js'></script>
 
 // 	<script src="test2.js"></script>
+
+// document.addEventListener("keydown", ev => {
+
+// 	let keyPressed = ev.keyCode
+// 	ev.preventDefault()
+// 	if (keyPressed === 32) {
+// 		jump_up()
+// 		canvas.innerHTML += '<audio src="./src/images/jump.wav" autoplay="autoplay">'
+// 	}
+// })
+
+// 	document.addEventListener("keydown", ev => {
+
+//     let keyPressed = ev.keyCode
+//     ev.preventDefault()
+//     if (keyPressed === 32) {
+//      jump_up()
+//      canvas.innerHTML += '<audio src="./src/images/jump.wav" autoplay="autoplay">'
+//    }
+//  })
