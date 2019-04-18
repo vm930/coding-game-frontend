@@ -10,8 +10,8 @@ var Engine = Matter.Engine,
 	MouseConstraint = Matter.MouseConstraint;
 
 // window height and width
-var width = 650;
-var height = 200;
+var width = 700;
+var height = 700;
 
 // create a Matter.js engine
 var engine = Engine.create(chickenContainer, {
