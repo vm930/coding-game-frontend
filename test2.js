@@ -40,7 +40,7 @@ var offset = 10,
 	options = {
 		isStatic: true,
 		render: {
-			visible: true
+			visible: false
 		}
 	};
 
@@ -79,7 +79,7 @@ World.add(engine.world, stack);
 var renderOptions = engine.render.options;
 
 // run the engine
-Engine.run(engine);
+// Engine.run(engine);
 
 World.add(engine.world, stack);
 
