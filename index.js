@@ -7,8 +7,8 @@ const initCardTag = document.querySelector('#resizeCard');
 // const canvaTag = document.querySelector('#c');
 
 let questionsJson;
-let currentIndex = 5;
-let level = 5;
+let currentIndex = 0;
+let level = 0;
 
 startGame();
 
@@ -28,9 +28,9 @@ function startGame() {
 		In this game, you must answer correctly of all the questions<br>
 		to help them growing into grown chickens!<br>
 		Learn to code by playing games.
-		
+
 		<button class="waves-effect waves-light btn-large btn-floating scale-transition pulse light-blue accent-3"
-		style="font-weight: bold; font-size: 1px font-family:Ubuntu, sans-serif" id="start">Start!</button>	
+		style="font-weight: bold; font-size: 1px font-family:Ubuntu, sans-serif" id="start">Start!</button>
 		`;
 	newImg.setAttribute('src', 'https://media.giphy.com/media/xTiTnsPhNtZETMmN1e/giphy.gif');
 	newPtag.appendChild(newImg);
