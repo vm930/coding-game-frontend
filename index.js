@@ -10,6 +10,15 @@ let questionsJson;
 let currentIndex = 0;
 let level = 0;
 
+const nav = document.querySelector(".nav-wrapper")
+nav.addEventListener('click', e => {
+	console.log(e.target.innerText);
+	if (e.target.innerText == "GROW YOUR CHICK"){
+		return location.reload()
+	}
+
+})
+
 startGame();
 
 initCardTag.addEventListener('click', function(e) {
@@ -19,6 +28,8 @@ initCardTag.addEventListener('click', function(e) {
 		fetchQuestion(currentIndex);
 	}
 });
+
+
 
 function startGame() {
 	const newPtag = document.createElement('p');
@@ -162,8 +173,6 @@ function displayOptions(answer) {
 		newImgTag.setAttribute('height', '200');
 		newDivtag.appendChild(newImgTag);
 		ul.appendChild(newDivtag);
-
-
 	}
 }
 
@@ -207,8 +216,6 @@ function displayChickens() {
 
 	document.querySelector('#resizeCard').innerHTML = ''
 	document.querySelector('#resizeCard').innerHTML = `<div id="chicken-container"></div>`
-
-
 }
 
 // .addEventListener("mouseover", (e) => {
