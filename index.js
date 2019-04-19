@@ -7,8 +7,8 @@ const initCardTag = document.querySelector('#resizeCard');
 // const canvaTag = document.querySelector('#c');
 
 let questionsJson;
-let currentIndex = 5;
-let level = 5;
+let currentIndex = 0;
+let level = 0;
 
 startGame();
 
@@ -162,6 +162,8 @@ function displayOptions(answer) {
 		newImgTag.setAttribute('height', '200');
 		newDivtag.appendChild(newImgTag);
 		ul.appendChild(newDivtag);
+
+
 	}
 }
 
@@ -179,6 +181,7 @@ questionDiv.addEventListener('click', function(e) {
 		if (currentIndex == 6 && eggImgTag.parentNode.dataset.iscorrect === 'true') {
 			alert('congratulations🏆');
 			//put out the final chicken animation
+
 			displayChickens();
 			//https://media.giphy.com/media/l41lMU9vPdqjrA4QE/giphy.gif
 		}
@@ -191,8 +194,6 @@ questionDiv.addEventListener('click', function(e) {
 
 function displayChickens() {
 	//clear the container
-	document.querySelector('#resizeCard').innerHTML = `<div id="chicken-container"></div>`
-
 	const newScriptTag1 = document.createElement('script');
 	const newScriptTag2 = document.createElement('script');
 	const newScriptTag3 = document.createElement('script');
@@ -203,6 +204,10 @@ function displayChickens() {
 	bodyTag.appendChild(newScriptTag1);
 	bodyTag.appendChild(newScriptTag2);
 	bodyTag.appendChild(newScriptTag3);
+
+	document.querySelector('#resizeCard').innerHTML = ''
+	document.querySelector('#resizeCard').innerHTML = `<div id="chicken-container"></div>`
+
 
 }
 

@@ -11,13 +11,13 @@ var Engine = Matter.Engine,
 
 // window height and width
 var width = 700;
-var height = 700;
+var height = 450;
 
 // create a Matter.js engine
 var engine = Engine.create(chickenContainer, {
 	render: {
 		options: {
-			showAngleIndicator: true,
+			showAngleIndicator: false,
 			wireframes: false,
 			background: 'transparent',
 			width: width,
@@ -65,7 +65,7 @@ var stack = Composites.stack(350, 40, 5, 20, 20, 20, function(x, y, column, row)
 		restitution: 0.2,
 		render: {
 			sprite: {
-				texture: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/180245/hen.svg'
+				texture: 'file:///Users/katekim/Downloads/Screen%20Shot%202019-04-18%20at%202.25.28%20PM.png'
 			}
 		},
 		position: {
@@ -87,4 +87,4 @@ World.add(engine.world, stack);
 Engine.run(engine);
 
 // run the renderer
-Render.run(render);
+// Render.run(render);
