@@ -65,7 +65,7 @@ var stack = Composites.stack(350, 40, 5, 20, 20, 20, function(x, y, column, row)
 		restitution: 0.2,
 		render: {
 			sprite: {
-				texture: 'file:///Users/katekim/Downloads/Screen%20Shot%202019-04-18%20at%202.25.28%20PM.png'
+				texture: './asset/little_chic.png'
 			}
 		},
 		position: {
