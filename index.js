@@ -126,7 +126,7 @@ function displayOptions(answer) {
 		newDivtag.innerText = `${answer.answer_content}`;
 		newImgTag.setAttribute('src', './asset/chick5.png');
 		newImgTag.className = 'action';
-		newImgTag.setAttribute('width', '200');
+		newImgTag.setAttribute('width', '170');
 		newImgTag.setAttribute('height', '200');
 		newDivtag.appendChild(newImgTag);
 		ul.appendChild(newDivtag);
@@ -142,7 +142,7 @@ function displayOptions(answer) {
 		newDivtag.innerText = `${answer.answer_content}`;
 		newImgTag.setAttribute('src', './asset/chic3.png');
 		newImgTag.className = 'shake-rotate';
-		newImgTag.setAttribute('width', '200');
+		newImgTag.setAttribute('width', '180');
 		newImgTag.setAttribute('height', '200');
 		newDivtag.appendChild(newImgTag);
 		ul.appendChild(newDivtag);
