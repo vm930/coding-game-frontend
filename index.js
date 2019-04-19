@@ -28,9 +28,9 @@ function startGame() {
 		In this game, you must answer correctly of all the questions<br>
 		to help them growing into grown chickens!<br>
 		Learn to code by playing games.
-		
+
 		<button class="waves-effect waves-light btn-large btn-floating scale-transition pulse light-blue accent-3"
-		style="font-weight: bold; font-size: 1px font-family:Ubuntu, sans-serif" id="start">Start!</button>	
+		style="font-weight: bold; font-size: 1px font-family:Ubuntu, sans-serif" id="start">Start!</button>
 		`;
 	newImg.setAttribute('src', 'https://media.giphy.com/media/xTiTnsPhNtZETMmN1e/giphy.gif');
 	newPtag.appendChild(newImg);
@@ -162,6 +162,8 @@ function displayOptions(answer) {
 		newImgTag.setAttribute('height', '200');
 		newDivtag.appendChild(newImgTag);
 		ul.appendChild(newDivtag);
+
+
 	}
 }
 
@@ -179,6 +181,7 @@ questionDiv.addEventListener('click', function(e) {
 		if (currentIndex == 6 && eggImgTag.parentNode.dataset.iscorrect === 'true') {
 			alert('congratulations🏆');
 			//put out the final chicken animation
+
 			displayChickens();
 			//https://media.giphy.com/media/l41lMU9vPdqjrA4QE/giphy.gif
 		}
@@ -191,15 +194,9 @@ questionDiv.addEventListener('click', function(e) {
 
 function displayChickens() {
 	//clear the container
-	document.querySelector('#resizeCard').remove();
-	const newDiv = document.createElement('div');
-	newDiv.id = 'chicken-container';
-	bodyTag.appendChild(newDiv);
-
 	const newScriptTag1 = document.createElement('script');
 	const newScriptTag2 = document.createElement('script');
 	const newScriptTag3 = document.createElement('script');
-
 	newScriptTag1.src = 'http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js';
 	newScriptTag2.src = 'https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.min.js';
 	newScriptTag3.src = 'test2.js';
@@ -208,14 +205,10 @@ function displayChickens() {
 	bodyTag.appendChild(newScriptTag2);
 	bodyTag.appendChild(newScriptTag3);
 
-	// document.querySelector('#resizeCard').innerHTML = `
-	//      <div class="card-content deep-orange lighten-1">
-	//             <div id="questionBlock">
-	//                   <div id="answerOptionBlock"></div>
-	//                   <div id="chicken-container"></div>
-	//             </div>
-	//     </div>
-	// `;
+	document.querySelector('#resizeCard').innerHTML = ''
+	document.querySelector('#resizeCard').innerHTML = `<div id="chicken-container"></div>`
+
+
 }
 
 // .addEventListener("mouseover", (e) => {
