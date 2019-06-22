@@ -4,8 +4,6 @@ const bodyTag = document.querySelector('body');
 const questionDiv = document.querySelector('#questionBlock');
 const answersDiv = document.querySelector('#answerOptionBlock');
 const initCardTag = document.querySelector('#resizeCard');
-// const canvaTag = document.querySelector('#c');
-
 let questionsJson;
 let currentIndex = 0;
 let level = 0;
@@ -162,8 +160,6 @@ function displayOptions(answer) {
 		newImgTag.setAttribute('height', '200');
 		newDivtag.appendChild(newImgTag);
 		ul.appendChild(newDivtag);
-
-
 	}
 }
 
@@ -205,10 +201,8 @@ function displayChickens() {
 	bodyTag.appendChild(newScriptTag2);
 	bodyTag.appendChild(newScriptTag3);
 
-	document.querySelector('#resizeCard').innerHTML = ''
-	document.querySelector('#resizeCard').innerHTML = `<div id="chicken-container"></div>`
-
-
+	document.querySelector('#resizeCard').innerHTML = '';
+	document.querySelector('#resizeCard').innerHTML = `<div id="chicken-container"></div>`;
 }
 
 // .addEventListener("mouseover", (e) => {

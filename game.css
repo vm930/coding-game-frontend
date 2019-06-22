@@ -123,14 +123,6 @@ p {
 	margin-inline-end: 0px;
 }
 
-/* .c {
-	display: block;
-	width: 80vw;
-	height: 80vh;
-	opacity: 0.5;
-	z-index: -1;
-} */
-
 @keyframes shake {
 	10%,
 	90% {
