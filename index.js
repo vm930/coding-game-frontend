@@ -30,7 +30,7 @@ function startGame() {
 		<button class="waves-effect waves-light btn-large btn-floating scale-transition pulse light-blue accent-3"
 		style="font-weight: bold; font-size: 1px font-family:Ubuntu, sans-serif" id="start">Start!</button>
 		`;
-	newImg.setAttribute('src', 'https://media.giphy.com/media/xTiTnsPhNtZETMmN1e/giphy.gif');
+	newImg.setAttribute('src', 'https://media.giphy.com/media/l41lMU9vPdqjrA4QE/giphy.gif');
 	newPtag.appendChild(newImg);
 	initCardTag.appendChild(newPtag);
 }
@@ -66,13 +66,10 @@ function displayOptions(answer) {
 		newDivtag.dataset.id = `${answer.answer_id}`;
 		newDivtag.dataset.iscorrect = `${answer.is_correct}`;
 		newDivtag.innerText = `${answer.answer_content}`;
-		newImgTag.setAttribute(
-			'src',
-			'https://png2.kisspng.com/sh/e20c2baf85e4ddab37453a91cb65fc9d/L0KzQYm3U8I5N6doiZH0aYP2gLBuTfVob15uhtU2a3H1cbW0gBhqa5xqhp9uZ3ewh7nwlPUubZhsi58AYXLlc7O5VvVlPJU9UJC8MEO7RIW8WcE2OmM3TagBN0i8R4O1kP5o/kisspng-egg-inc-karad-chicken-egg-white-eggs-5abbcb26ed4d88.303844591522256678972.png'
-		);
+		newImgTag.setAttribute('src', './asset/egg_PNG40778.png');
 		newImgTag.className = 'shake-slow shake-constant shake-constant--hover';
 		// newImgTag.className = 'shake-action';
-		newImgTag.setAttribute('width', '200');
+		newImgTag.setAttribute('width', '150');
 		newImgTag.setAttribute('height', '200');
 		newDivtag.appendChild(newImgTag);
 		// newDiv.appendChild(document.createTextNode(`${answer.answer_content}`));
